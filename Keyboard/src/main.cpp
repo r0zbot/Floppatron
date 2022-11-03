@@ -49,7 +49,7 @@ void readButtons() {
  for (int i = 0; i < NUM_BUTTONS; i++)  {
     buttons[i].update();
     if ( buttons[i].fell() ) sendNote (i, true, curChannel++);
-    else if (buttons[i].rose()) sendNote (i, false, curChannel--);
+    else if (buttons[i].rose()) sendNote (i, false, --curChannel);
     Serial.print(String(buttons[i].read()) + " ");
   }
   Serial.println();
